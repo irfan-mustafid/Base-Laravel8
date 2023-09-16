@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\mPenawaran;
+use App\Models\mPenawarans;
 
 class Dashboard extends Controller
 {
     public function index()
     {
-        $data = mPenawaran::all();
+        $data = mPenawarans::all()->toArray();
         dd($data);
         return view('content/dashboard', $data);
     }
