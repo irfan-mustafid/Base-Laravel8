@@ -293,7 +293,7 @@
             </div>
 
             <!-- Main Content -->
-            @include('content.dashboard');
+            @yield('content')
             <!-- End Main Content -->
 
 

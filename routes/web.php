@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+Route::group(['prefix' => 'welcome', 'as' => 'welcome.'], function () {
     Route::get('/', [Dashboard::class, 'index']);
     // Route::get('/get', [Dashboard::class, 'get'])->name('get');
     // Route::post('/simpan', [Dashboard::class, 'simpan'])->name('simpan');
