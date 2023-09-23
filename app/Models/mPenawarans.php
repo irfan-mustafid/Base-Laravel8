@@ -11,4 +11,9 @@ class mPenawarans extends Model
     protected $table = 'tender';
     protected $keyType = 'integer';
     protected $primaryKey = 'tender_id';
+    const CREATED_AT = 'created';
+    const UPDATED_AT = 'created';
+    protected $fillable = [
+        'project_name'
+    ];
 }
