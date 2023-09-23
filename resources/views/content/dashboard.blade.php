@@ -19,7 +19,7 @@
                         <div class="card-body">
                             <div class="table-responsive">
 
-                                <table class="table table-bordered table-md">
+                                <table class="table table-bordered table-md" id="table-coba">
                                     <thead>
                                         <tr>
                                             <th>No Dokumen</th>
@@ -42,4 +42,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    @include('content.jsdashboard')
 @endsection

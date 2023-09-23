@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::group(['prefix' => 'welcome', 'as' => 'welcome.'], function () {
+Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
     Route::get('/', [Dashboard::class, 'index']);
     // Route::get('/get', [Dashboard::class, 'get'])->name('get');
     // Route::post('/simpan', [Dashboard::class, 'simpan'])->name('simpan');
