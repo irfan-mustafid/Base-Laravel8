@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\mPenawarans;
 use Illuminate\Http\Request;
 
+use function Psy\debug;
+
 class Dashboard extends Controller
 {
     public function index()
@@ -26,5 +28,15 @@ class Dashboard extends Controller
             'project_name' => $post['project_name'],
         ];
         mPenawarans::updateOrCreate(['tender_id' => $post['id']], $setUpdateOrCreate);
+    }
+
+    public function getEditDetail(Request $request)
+    {
+        $id = $request->segment(3);
+        $data = mPenawarans::find($id);
+        $d = [
+            'data' => $data,
+        ];
+        return view('content.edit', $d);
     }
 }

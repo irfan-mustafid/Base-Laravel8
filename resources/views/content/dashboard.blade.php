@@ -37,6 +37,9 @@
                                                         onclick="edit('{{ $dt->tender_id }}', '{{ $dt->project_name }}')">
                                                         <i class="ion-edit"></i>
                                                     </a>
+                                                    <a href="{{ url('dashboard/getEditDetail/' . $dt->tender_id) }}">
+                                                        <i class="ion-ios-eye"></i>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach

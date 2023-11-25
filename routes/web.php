@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Detail;
+use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +25,13 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
     Route::get('/', [Dashboard::class, 'index']);
     // Route::get('/get', [Dashboard::class, 'get'])->name('get');
     Route::post('/simpan', [Dashboard::class, 'simpan'])->name('simpan');
-    // Route::post('/hapus', [Dashboard::class, 'hapus'])->name('hapus');
+    Route::get('/getEditDetail/{id}', [Dashboard::class, 'getEditDetail'])->name('getEditDetail');
 });
+
+// Route::group(['prefix' => 'detail', 'as' => 'detail.'], function () {
+//     // Route::get('/', [Detail::class, 'index']);
+//     Route::get('/projects/display/{id}'
+// });
 
 // Route::get('/dashboard', function () {
 //     // return view('content/dashboard');
