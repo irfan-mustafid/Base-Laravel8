@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/modules/ionicons/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/modules/summernote/summernote-bs4.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/modules/datatables/datatables.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/js/jquery-confirm-v3.3.4/dist/jquery-confirm.min.css') }}" />
 
 
     <!-- Template CSS -->
@@ -24,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -331,8 +334,7 @@
     <script src="{{ asset('assets/js/page/modules-ion-icons.js') }}"></script>
     <script src="{{ asset('assets/modules/datatables/datatables.js') }}"></script>
     <script src="{{ asset('assets/modules/datatables/datatables.min.js') }}"></script>
-
-
+    <script src="{{ asset('assets/js/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js') }}"></script>
     <!-- Template JS File -->
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>

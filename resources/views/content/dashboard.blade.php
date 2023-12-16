@@ -20,14 +20,14 @@
                             <div class="table-responsive">
 
                                 <table class="table table-bordered table-md" id="table-coba">
-                                    <thead>
+                                    {{-- <thead>
                                         <tr>
                                             <th>No Dokumen</th>
                                             <th>Nama Pekerjaan</th>
                                             <th style="text-align: center">Action</th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
+                                    </thead> --}}
+                                    {{-- <tbody>
                                         @foreach ($data as $dt)
                                             <tr>
                                                 <td>{{ $dt->spk_no }}</td>
@@ -43,7 +43,7 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-                                    </tbody>
+                                    </tbody> --}}
                                 </table>
                             </div>
                         </div>

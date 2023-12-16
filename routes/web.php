@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
     Route::get('/', [Dashboard::class, 'index']);
-    // Route::get('/get', [Dashboard::class, 'get'])->name('get');
+    Route::get('/getDataJaminan', [Dashboard::class, 'getDataJaminan'])->name('getDataJaminan');
     Route::post('/simpan', [Dashboard::class, 'simpan'])->name('simpan');
     Route::get('/getEditDetail/{id}', [Dashboard::class, 'getEditDetail'])->name('getEditDetail');
 });
