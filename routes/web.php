@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Detail;
+use App\Http\Controllers\Login;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Routing\RouteGroup;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::group(['prefix' => 'login', 'as' => 'login.'], function () {
+    Route::get('/', [Login::class, 'index'])->name('/');
+});
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
     Route::get('/', [Dashboard::class, 'index']);

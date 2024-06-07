@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\mPenawarans;
+use App\Models\mAllJaminan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use function Psy\debug;
@@ -11,7 +11,7 @@ class Dashboard extends Controller
 {
     public function index()
     {
-        $data = mPenawarans::all();
+        $data = mAllJaminan::all();
 
         $d = [
             'data' => $data,
@@ -23,7 +23,8 @@ class Dashboard extends Controller
 
     public function getDataJaminan()
     {
-        $data = mPenawarans::all();
+        $statusArray = ['0', '4'];
+        $data = mAllJaminan::whereIn('status', $statusArray)->whereProject_vendor_id('1')->get();
         return response(['aaData' => $data]);
     }
 
@@ -35,7 +36,7 @@ class Dashboard extends Controller
             $setUpdateOrCreate = [
                 'project_name' => $post['project_name'],
             ];
-            mPenawarans::updateOrCreate(['tender_id' => $post['id']], $setUpdateOrCreate);
+            mAllJaminan::updateOrCreate(['tender_id' => $post['id']], $setUpdateOrCreate);
 
             DB::commit();
             return response([
@@ -54,7 +55,7 @@ class Dashboard extends Controller
     public function getEditDetail(Request $request)
     {
         $id = $request->segment(3);
-        $data = mPenawarans::find($id);
+        $data = mAllJaminan::find($id);
         $d = [
             'data' => $data,
         ];

@@ -82,7 +82,7 @@
                 data: null,
                 title: "Action",
                 render: function(data, type, full, meta) {
-                    return `<a href="{{ url('dashboard/getEditDetail/${full.tender_id}') }}">
+                    return `<a href="{{ url('dashboard/getEditDetail/${full.id}') }}">
                               <i class="ion-ios-eye"></i>
                             </a>`
                 },
