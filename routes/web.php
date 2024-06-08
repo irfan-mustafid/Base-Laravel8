@@ -23,7 +23,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::group(['prefix' => 'login', 'as' => 'login.'], function () {
-    Route::get('/', [Login::class, 'index'])->name('/');
+    Route::get('/', [Login::class, 'index'])->name('login')->middleware('guest');
+    Route::post('/auth', [Login::class, 'auth'])->name('auth');
+    Route::get('/logout', [Login::class, 'logout'])->name('logout');
 });
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
@@ -32,12 +34,3 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
     Route::post('/simpan', [Dashboard::class, 'simpan'])->name('simpan');
     Route::get('/getEditDetail/{id}', [Dashboard::class, 'getEditDetail'])->name('getEditDetail');
 });
-
-// Route::group(['prefix' => 'detail', 'as' => 'detail.'], function () {
-//     // Route::get('/', [Detail::class, 'index']);
-//     Route::get('/projects/display/{id}'
-// });
-
-// Route::get('/dashboard', function () {
-//     // return view('content/dashboard');
-// });
