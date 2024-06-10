@@ -19,10 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::group(['prefix' => 'login', 'as' => 'login.'], function () {
+Route::group(['prefix' => '/', 'as' => 'login.'], function () {
     Route::get('/', [Login::class, 'index'])->name('login')->middleware('guest');
     Route::post('/auth', [Login::class, 'auth'])->name('auth');
     Route::get('/logout', [Login::class, 'logout'])->name('logout');
