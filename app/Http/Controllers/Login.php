@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\mAllJaminan;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 use function Psy\debug;
 
 class Login extends Controller
@@ -17,13 +20,17 @@ class Login extends Controller
 
     public function auth(Request $request)
     {
-        $credentials = $request->validate([
+        $request->validate([
             'username' => 'required',
             'password' => 'required',
         ]);
 
+        $credentials = $request->only('username', 'password');
+
+        // echo Hash::make("12345678");
 
         if (Auth::attempt($credentials)) {
+            // dd($request->all(), $credentials, Auth::user(), User::find('2'));
             $request->session()->regenerate();
             return response()->json(['status' => true, 'redirect' => '/dashboard']);
         } else {

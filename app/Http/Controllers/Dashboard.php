@@ -11,6 +11,7 @@ class Dashboard extends Controller
 {
     public function index()
     {
+        // dd('tes');
         $data = mAllJaminan::all();
 
         $d = [

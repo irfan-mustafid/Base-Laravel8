@@ -25,7 +25,7 @@ Route::group(['prefix' => '/', 'as' => 'login.'], function () {
     Route::get('/logout', [Login::class, 'logout'])->name('logout');
 });
 
-Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+Route::group(['middleware' => 'cek_login', 'prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
     Route::get('/', [Dashboard::class, 'index']);
     Route::get('/getDataJaminan', [Dashboard::class, 'getDataJaminan'])->name('getDataJaminan');
     Route::post('/simpan', [Dashboard::class, 'simpan'])->name('simpan');
