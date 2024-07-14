@@ -79,6 +79,27 @@
 
             },
             {
+                data: 'bowheer_list_name',
+                title: "Pemilik Proyek",
+                class: "center",
+
+            },
+            {
+                data: 'bond_value',
+                title: "Nilai Jaminan",
+                render: function(data, type, full, meta) {
+                    return autoseparators(full.bond_value);
+                },
+                class: "center",
+
+            },
+            {
+                data: 'status',
+                title: "Status",
+                class: "center",
+
+            },
+            {
                 data: null,
                 title: "Action",
                 render: function(data, type, full, meta) {
@@ -103,5 +124,22 @@
     function edit(id, name) {
         $('#project_id').val(id);
         $('#project_name').val(name);
+    }
+
+    function autoseparators(Num) { //function to add commas to textboxes
+        var number_string = Num.toString(),
+            split = number_string.split('.'),
+            sisa = split[0].length % 3,
+            rupiah = split[0].substr(0, sisa),
+            ribuan = split[0].substr(sisa).match(/\d{1,3}/gi);
+
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        // Tambahkan tiga angka desimal
+        rupiah += (split[1] !== undefined ? ',' + split[1].substr(0, 2) : '');
+        return rupiah;
     }
 </script>
